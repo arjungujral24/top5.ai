@@ -18,7 +18,7 @@ app.use(express.static('public'));
 
 io.on('connection', (socket) => 
 {
-  console.log('User connected');
+  console.log('Player joined!');
 
   // Handle events when a player moves
   socket.on('move', (data) => 
