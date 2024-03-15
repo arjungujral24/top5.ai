@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.4/socket.io.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/confetti-js@0.0.17/dist/index.min.js"></script>
+  
+
+  <title>top5.ai Draft Simulator</title>
+</head>
+<body>
+    <div id = "joinPage">
+        <h1>top5.ai</h1>
+        <button id="createNewGame">Create New Game</button>
+        <button id="joinGame">Join Existing Game</button>
+    </div>
+
+    <div id = "joinExisting" style = "display: none;">
+        <h1>top5.ai</h1>
+        <input type="text" id="gameCode" placeholder="Enter game code">
+        <button id="gotoGame">Go</button>
+    </div>
+
+    <div id = "topicPage" style = "display: none;">
+        <h1>top5.ai</h1>
+        <button id="customTopic">Custom Topic</button>
+        <button id="randomTopic">Randomly Generated Topic</button>
+    </div>
+
+    <div id = "randomPickPage" style = "display: none;">
+        <h1>top5.ai</h1>
+        <h2 id="topicGen"></h2>
+        <button id="goRandom">Go</button>
+    </div>
+
+    
+    
+    <div id = "homepage" style = "display: none;">
+        <h1>top5.ai</h1>
+        <p>Type in a draft topic and let the games begin. </p>
+        <input type="text" id="draftTopicInput" placeholder="Enter Draft Topic">
+        <button id="goButton">Go</button>
+    </div>
+
+
+
+    <div id = "draftPage" style = "display: none;">
+        <h1>top5.ai</h1>
+
+        <div id="topicContainer">
+            <h2 id="draftTitle"></h2>
+        </div>
+
+        <div class="draftBoardContainer">
+            <div id="board1" class="draftBoard">
+                <h3>Player 1</h3>
+            </div>
+            <div id="board2" class="draftBoard">
+                <h3>Player 2</h3>
+            </div>
+        </div>
+
+        <div class="draftButtons">
+            <div id="draftB1" class="draftB">
+                <input type="text" id="playerInput1" placeholder="Player 1 Enter Draft Pick" size = "22">
+                <button id="submitPick1">Lock in</button>
+            </div>
+
+            <div id="draftB2" class="draftB">
+                <input type="text" id="playerInput2" placeholder="Player 2 Enter Draft Pick" size = "22">
+                <button id="submitPick2">Lock in</button>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="votingSection" style="display: none;">
+        <h2>Vote for the Winner!</h2>
+        <button id="votePlayer1">Player 1</button>
+        <button id="votePlayer2">Player 2</button>
+    </div>
+  
+    <div id="winnerSection" style="display: none;">
+        <canvas id="confettiCanvas"></canvas>
+        <h2 id="winnerAnnouncement"></h2>
+        <button id="playAgain">Play Again</button>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
